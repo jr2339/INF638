@@ -4,6 +4,7 @@ function r = round_function(encrpt_key, r)
     encrpt_key = circshift(encrpt_key,[0,3]);
     
     % Byte Substitution
+    
     out_byte = byte_subs(encrpt_key,'e');
 
     % Round coefficient values.

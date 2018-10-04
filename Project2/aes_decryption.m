@@ -11,7 +11,7 @@ function plaintext_recov = aes_decryption(ciphertext,round_keys)
     r = 10; % initial decryption round
 
     % Initial Key Addition Layer; round (r) = 10
-    input = bitxor(ciphertext,reshape(round_keys(:,:,r+1)', [1 16]));
+    input = bitxor(ciphertext,reshape(round_keys(:,:,1)', [1 16]));
 
     while(r >= 1 )
     
@@ -41,7 +41,7 @@ function plaintext_recov = aes_decryption(ciphertext,round_keys)
         end
     
      % Key Addition Layer
-        input = bitxor(out_byte,reshape(round_keys(:,:,(r-1)+1)', [1 16]));
+        input = bitxor(out_byte,reshape(round_keys(:,:,1)', [1 16]));
         r = r - 1;
     end
 

@@ -1,5 +1,5 @@
 function ciphertext = aes_encryption(plaintext,round_keys)
- 
+
     fprintf('\n****AES Encryption****\n\n');
     fprintf('\nPlaintext is:\n'); 
     disp(plaintext); 
@@ -24,7 +24,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
         % ShiftRows Sublayer
         % Shifting
         for i = 2:4
-            out_byte(i,:) = circshift(out_byte(i,:),[0,3-(i)-2)]);
+            out_byte(i,:) = circshift(out_byte(i,:),[0,4-i]);
         end
     
         % MixColumn Sublayer
@@ -36,7 +36,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
         end
     
     % Key Addition Layer
-    input = bitxor(C,reshape(round_keys(:,:,r+1)', [1 16]));
+    input = bitxor(C,reshape(round_keys(:,:,1)', [1 16]));
     
     end
     

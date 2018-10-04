@@ -2,5 +2,4 @@ function [val1, val2] = getGlobal
 global x
 global y
 val1 = x;
-val2 = y;open('getGlobal')
-diary aes_descryption.m
+val2 = y;

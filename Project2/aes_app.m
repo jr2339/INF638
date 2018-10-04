@@ -7,6 +7,7 @@
 
 %This file is the main function
 % Initial input plaintext
+preallocations;
 plaintext = input('Type in an input message (16 characters or less):\n','s');
 %Check the format of the plaintext
 plaintext = check_format(plaintext);
@@ -17,6 +18,8 @@ key = check_format(key);
 
 % Key Schedule
 round_keys = key_schedule(double(key));
+
+disp(round_keys);
 
 % Message Encryption
 ciphertext = aes_encryption(plaintext,round_keys);
