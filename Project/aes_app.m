@@ -20,3 +20,6 @@ round_keys = key_schedule(double(key));
 
 % Message Encryption
 ciphertext = aes_encryption(plaintext,round_keys);
+
+% Message Decryption
+plaintext_recov = aes_decryption(ciphertext, round_keys);

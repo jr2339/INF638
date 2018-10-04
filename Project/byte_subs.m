@@ -28,5 +28,4 @@ out_byte ='';
         disp('No encoding specified');
     end
 
-endopen('byte_subs')
-diary aes_encryption.m
+end

@@ -17,11 +17,11 @@ function round_key = key_schedule(key)
         for j = 1:3
             % Update w with: w[4*i+j] = w[4*i+j?1] + w[4*(i?1)+j]
             if j == 1
-                round_key (j,:,1) = round_key_temp;
+                round_key(j,:,1) = round_key_temp;
             elseif j == 2
-                round_key (j,:,1) = bitxor(encrpt_key_temp, round_key (j,:,1));
+                round_key(j,:,1) = bitxor(round_key_temp, round_key (j,:,1));
             else
-                round_key (j,:,1) = bitxor(round_key (j,:,1),round_key (j,:,1));
+                round_key(j,:,1) = bitxor(round_key (j,:,1),round_key (j,:,1));
             end
         end
     end
