@@ -24,7 +24,8 @@ inv_sbox_table = reshape(inv_sbox_vector(1:256), [16,16]);
 
 %Constant
 m = 8; % GF(2^m)
-prim_poly = 283;
+prim_poly = input('Please input a PRIM_POLY  between 2^M+1(257)and 2^(M+1)-1(513).:\n');
+
 
 %Constant matrix for MixColumn Layer
 fixM = [02 03 01 01;
@@ -42,14 +43,20 @@ fixM_d = [14 11 13 09;
 % Initial input plaintext
 plaintext = input('Type in an input message (16 characters or less):\n','s');
 %Check the format of the plaintext
-plaintext = check_format(plaintext);
+plaintext = check_format(plaintext); 
 % Initial key
 key = input('Type in a secret key/password (16 characters or less):\n','s');
 %Check the format of the key
 key = check_format(key);
 
+                           
+X= sprintf('%s will be in this matrix:',key);
+disp(X);
+disp(reshape(double(key),[4,4]));
+       
 % Key Schedule
 round_keys = key_schedule(double(key));
+
 
 
 % Message Encryption

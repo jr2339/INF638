@@ -4,11 +4,11 @@ function ciphertext = aes_encryption(plaintext,round_keys)
     global m prim_poly fixM;
     
     
-    fprintf('\n****AES Encryption****\n\n');
+    fprintf('\n***********************************Start AES Encryption***********************************\n\n');
     fprintf('\nPlaintext is:\n'); 
     disp(plaintext); 
     fprintf('\nKey is:\n'); 
-    disp(char(reshape(round_keys(:,:,1)',[1 16])));
+    disp((reshape(round_keys(:,:,1)',[1,16])));
    
 
     
@@ -48,7 +48,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
     ciphertext = input;
     fprintf('\nCiphertext is:\n')
     disp(char(ciphertext));
-    fprintf('\n****END OF ENCRYPTION****\n\n');
+    fprintf('\n***********************************End AES Encryption***********************************\n\n');
 
        
 end

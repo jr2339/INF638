@@ -2,11 +2,12 @@ function plaintext_recov = aes_decryption(ciphertext,round_keys)
 
 
     % Intro
-    fprintf('\n****AES Decryption****\n\n')
+    fprintf('\n***********************************Start AES Decryption***********************************\n\n')
     fprintf('\nCiphertext is:\n'); 
     disp(char(ciphertext)); 
     fprintf('\n\nKey is:\n'); 
-    disp(char(reshape(round_keys(:,:,1)',[1 16])));
+    %disp(char(reshape(round_keys(:,:,1)',[1 16])));
+    disp((reshape(round_keys(:,:,1),[1 16])));
 
     % Preallocations
     global m prim_poly fixM_d;
@@ -51,5 +52,5 @@ function plaintext_recov = aes_decryption(ciphertext,round_keys)
     plaintext_recov = input;
     fprintf('\nPlaintext is\n')
     disp(char(plaintext_recov));
-    fprintf('\n****END OF DECRYPTION****\n\n');
+    fprintf('\n***********************************End AES Decryption***********************************\n\n');
 end
