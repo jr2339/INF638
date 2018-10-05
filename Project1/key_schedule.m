@@ -26,7 +26,7 @@ function round_key = key_schedule(key)
             end
         end
         disp(round_key);
-           
+        disp((reshape(round_key(:,:,1),[1 16])));
     end
    fprintf('\n***********************************End AES Key Round***********************************\n\n');
 end

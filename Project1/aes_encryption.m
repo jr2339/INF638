@@ -8,7 +8,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
     fprintf('\nPlaintext is:\n'); 
     disp(plaintext); 
     fprintf('\nKey is:\n'); 
-    disp((reshape(round_keys(:,:,1)',[1,16])));
+    disp((reshape(round_keys(:,:,1),[1,16])));
    
 
     
@@ -18,7 +18,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
     plaintext_dec = double(plaintext);
 
     % Initial Key Addition Layer; round (r) = 0 
-    input = bitxor(plaintext_dec,reshape(round_keys(:,:,1)', [1 16]));
+    input = bitxor(plaintext_dec,reshape(round_keys(:,:,1), [1 16]));
     
     for r = 1:10
         % Byte substitution
@@ -40,7 +40,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
         end
     
     % Key Addition Layer
-    input = bitxor(C,reshape(round_keys(:,:,1)', [1 16]));
+    input = bitxor(C,reshape(round_keys(:,:,1), [1 16]));
     
     end
     

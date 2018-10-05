@@ -53,7 +53,7 @@ key = check_format(key);
 X= sprintf('%s will be in this matrix:',key);
 disp(X);
 disp(reshape(double(key),[4,4]));
-       
+disp(double(key));  
 % Key Schedule
 round_keys = key_schedule(double(key));
 
