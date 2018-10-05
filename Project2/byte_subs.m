@@ -3,8 +3,10 @@ function out_byte = byte_subs(input,encoding )
 %   Detailed explanation goes here
     out_byte = zeros(1,length(input));
 
+    global  sbox_table inv_sbox_table; 
     
-     [sbox_table,inv_sbox_table] = getGlobal;
+    
+    %[sbox_table,inv_sbox_table] = getGlobal;
      
     if(encoding == 'e')
         

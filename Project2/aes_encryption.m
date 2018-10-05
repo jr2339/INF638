@@ -1,12 +1,16 @@
 function ciphertext = aes_encryption(plaintext,round_keys)
 
+    %Preallocations 
+    global m prim_poly fixM;
+    
+    
     fprintf('\n****AES Encryption****\n\n');
     fprintf('\nPlaintext is:\n'); 
     disp(plaintext); 
     fprintf('\nKey is:\n'); 
     disp(char(reshape(round_keys(:,:,1)',[1 16])));
-    %Preallocations
-    global m prim_poly fixM;
+   
+
     
     encrypt = 'e'; % Encoding Mode. 'e' for encryption. 'd' for decryption.
 
@@ -24,7 +28,7 @@ function ciphertext = aes_encryption(plaintext,round_keys)
         % ShiftRows Sublayer
         % Shifting
         for i = 2:4
-            out_byte(i,:) = circshift(out_byte(i,:),[0,4-i]);
+            out_byte(i,:) = circshift(out_byte(i,:),[0,5-i]);
         end
     
         % MixColumn Sublayer

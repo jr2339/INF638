@@ -1,5 +1,5 @@
 function round_key = key_schedule(key)
-
+    
     key = double(key);
 
     %round key 0
