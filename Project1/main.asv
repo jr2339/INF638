@@ -46,21 +46,16 @@ fixM_d = [14 11 13 09;
 % Initial input plaintext
 plaintext = input('Type in an input message (16 characters or less):\n','s');
 while length(plaintext)>16
-    disp('invalid plaintext');
+        disp('invalid value');
     plaintext = input('Type in an input message (16 characters or less):\n','s');
-end
 %Check the format of the plaintext
 plaintext = check_format(plaintext); 
 % Initial key
 key = input('Type in a secret key/password (16 characters or less):\n','s');
-while length(key)>16
-    disp('invalid key');
-    key = input('Type in a secret key/password (16 characters or less):\n','s');
-end
-
 %Check the format of the key
 key = check_format(key);
-                     
+
+                           
 X= sprintf('%s will be in this matrix:',key);
 disp(X);
 disp(reshape(double(key),[4,4]));
