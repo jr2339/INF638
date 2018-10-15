@@ -9,10 +9,7 @@
 %   prim_poly: integer representation of the primitive polynomial used by GF
 %Outputs:
 %   DecOutput: Decimal Array 
-%Dr. Murad Qahwash
-%DeVry University-Orlando, FL
-%e-mail: mqahwash@orl.devry.edu
-%October 05, 2006
+
 %=================================================================
 
 function [DecOutput] = gf2dec(GFInput,m,prim_poly)

@@ -26,10 +26,7 @@ inv_sbox_table = reshape(inv_sbox_vector(1:256), [16,16]);
 m = 8; % GF(2^m)
 prim_poly = 283;
 
-while prim_poly < 2^m+1 ||  prim_poly > 2^(m+1)-1
-    disp('invalid value');
-    prim_poly = input('Please input a PRIM_POLY  between 2^M+1(257)and 2^(M+1)-1(513).:\n');
-end
+
 
 %Constant matrix for MixColumn Layer
 fixM = [02 03 01 01;

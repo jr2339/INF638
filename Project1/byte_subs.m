@@ -1,13 +1,10 @@
 function out_byte = byte_subs(input,encoding )
-%BYTE_SUBS Summary of this function goes here
-%   Detailed explanation goes here
-    out_byte = zeros(1,length(input));
 
     global  sbox_table inv_sbox_table; 
-    
-    
-    %[sbox_table,inv_sbox_table] = getGlobal;
-     
+
+    out_byte = zeros(1,length(input));
+
+
     if(encoding == 'e')
         
         % Byte substitution
